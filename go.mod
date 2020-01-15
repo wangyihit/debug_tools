@@ -1,5 +1,5 @@
-module echo_server
+module debug_tools
 
 go 1.12
 
-require github.com/bwmarrin/snowflake v0.3.0
+require github.com/golang/protobuf v1.3.2

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"debug_tools/pb/echo_server"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -8,19 +9,18 @@ import (
 	"log"
 	"net/http"
 	"strings"
-
-	PbProto "crawl_open_proto/golang/lazy_boy/v1"
 )
 
 var port int
 
 func handler(w http.ResponseWriter, r *http.Request) {
+
 	headers := make(map[string]string)
 	for key, values := range r.Header {
 		headers[key] = strings.Join(values, ",")
 	}
 
-	req := PbProto.HttpRequestDump{
+	req := echo_server.HttpRequestDump{
 		Url:     r.URL.String(),
 		Headers: headers,
 		Method:  r.Method,
