@@ -1,0 +1,9 @@
+package echo_server;
+
+
+message CG_LOGIN_IN
+{
+required int32 id = 1;
+required string account = 2;
+required string password = 3;
+}
