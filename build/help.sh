@@ -21,7 +21,7 @@ build_package(){
     echos "build for pi"
     GOOS=linux GOARCH=arm go build -o ../bin/${dest}_pi
     echos "build for linux"
-    go build -o ../bin/${dest}
+    GOOS=linux GOARCH=amd64 go build -o ../bin/${dest}
     echo "build ${dest} complete"
     cd -
 }
